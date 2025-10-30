@@ -199,15 +199,24 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 const SizedBox(height: 30),
                 // Submit Button with Loading Animation
-                AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
-                  width: _isLoading ? 60 : double.infinity,
+                SizedBox(
+                  width: double.infinity,
                   height: 60,
                   child: _isLoading
-                      ? const Center(
-                          child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                                Colors.deepPurple),
+                      ? Center(
+                          child: Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.deepPurple[100],
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: const Center(
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                    Colors.deepPurple),
+                              ),
+                            ),
                           ),
                         )
                       : ElevatedButton(
